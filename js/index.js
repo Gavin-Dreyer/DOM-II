@@ -39,18 +39,26 @@ logo.addEventListener('mouseenter', e => {
 })
 
 navBar.forEach(item => {
-    item.addEventListener('mouseenter', e => {
+    item.addEventListener('click', e => {
         item.setAttribute('href', 'https://lambdaschool.com/')
+        event.preventDefault();
     })
 })
 
 const headerImg = document.querySelector('header img');
 headerImg.addEventListener('click', e => {
     headerImg.style.transform = 'scale(2.0)'
+    event.stopPropagation();
 })
 headerImg.addEventListener('mouseleave', e => {
     headerImg.style.transform = 'scale(1.0)'
 })
+
+const headerIntro = document.querySelector('.intro');
+headerIntro.addEventListener('click', e => {
+    headerIntro.style.backgroundColor = 'red';
+})
+
 
 window.addEventListener('resize', e => {
     const pText = document.querySelectorAll('.content-section');
@@ -65,20 +73,19 @@ boatImg.addEventListener('drag', e => {
     boatImg.style.transition = 'transform 1s'
 })
 
-// const bodyPage = document.querySelectorAll('body');
-// bodyPage.forEach(items => {
-//     items.addEventListener('keydown', e => {
-//         items.style.backgroundColor = 'blue';
-//     })
+const bodyPage = document.querySelectorAll('body');
+bodyPage.forEach(items => {
+    items.addEventListener('keydown', e => {
+        items.style.backgroundColor = 'blue';
+    })
     
-//     items.addEventListener('keyup', e => {
-//         items.style.backgroundColor= 'white';
-//     })
-// })
-
-const footerAdjust = document.querySelector('footer');
-footerAdjust.addEventListener('keydown', e => {
-    footerAdjust.styles.backgroundColor = 'red !important';
+    items.addEventListener('keyup', e => {
+        items.style.backgroundColor= 'white';
+    })
 })
+
+window.addEventListener('load', e => {
+    alert('Your page is loaded');
+  });
 
 

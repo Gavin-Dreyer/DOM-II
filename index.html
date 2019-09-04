@@ -86,5 +86,14 @@
     <p>Copyright Fun Bus 2018</p>
   </footer>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+  <script>
+    document.querySelector('.btn').addEventListener('click', e => {
+      Tween.to('.btn', 1, {scaleY: 1})
+    })
+  
+  </script>
 </body>
 </html>
